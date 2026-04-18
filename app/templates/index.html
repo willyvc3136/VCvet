@@ -1,27 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VCvet - Panel Principal</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 font-sans">
-    <nav class="bg-blue-600 p-4 text-white shadow-lg">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">🐾 VCvet System</h1>
-            <span class="bg-blue-700 px-3 py-1 rounded-full text-sm">Modo Desarrollo</span>
-        </div>
-    </nav>
+{% extends "base.html" %}
 
-    <main class="container mx-auto mt-10 p-5">
-        <div class="bg-white rounded-xl shadow-md p-8 text-center">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">¡Bienvenido de nuevo, Willy!</h2>
-            <p class="text-gray-600 mb-6 text-lg">El sistema veterinario está listo para empezar a registrar pacientes.</p>
-            <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-lg transition">
-                + Nuevo Paciente
-            </button>
-        </div>
-    </main>
-</body>
-</html>
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<div class="bg-white rounded-xl shadow-md p-8 text-center">
+    <h2 class="text-3xl font-bold text-gray-800 mb-4">¡Bienvenido de nuevo, Willy!</h2>
+    <p class="text-gray-600 mb-6 text-lg">El sistema veterinario está listo...</p>
+    <a href="/registro" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-lg">
+        + Nuevo Paciente
+    </a>
+</div>
+{% endblock %}

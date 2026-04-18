@@ -2,11 +2,11 @@
 
 **Objetivo:** Crear la interfaz de bienvenida y el formulario para capturar datos de mascotas.
 
-### Tareas (To-Do):
+### Tareas:
 - [x] Configuración de entorno (Codespaces + Flask).
-- [x] Creación de página de bienvenida (Index).
-- [ ] Creación del Formulario de Registro de Pacientes.
-- [ ] Validación de datos en el servidor (Backend).
-- [ ] Almacenamiento temporal de datos.
+- [x] Arquitectura Modular con `base.html`.
+- [x] Formulario de Registro de Pacientes.
+- [x] Sistema de Notificaciones (Flash Messages).
+- [x] Validación de registro de un paciente real.
 
 **Definición de Hecho (DoD):** El usuario debe poder ver la web, llenar un formulario y ver un mensaje de "Registro Exitoso".
