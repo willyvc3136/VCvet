@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Listado de Pacientes{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto px-4">
+    <div class="flex justify-between items-center mb-8">
+        <h2 class="text-3xl font-bold text-gray-800">Panel de Pacientes</h2>
+        <a href="/registro" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-700 transition">
+            + Nuevo Registro
+        </a>
+    </div>
+
+    <div class="bg-white shadow-xl rounded-2xl overflow-hidden border border-gray-100">
+        <table class="w-full text-left border-collapse">
+            <thead class="bg-gray-50 border-b border-gray-100">
+                <tr>
+                    <th class="p-4 font-bold text-gray-600">ID</th>
+                    <th class="p-4 font-bold text-gray-600">Mascota</th>
+                    <th class="p-4 font-bold text-gray-600">Especie</th>
+                    <th class="p-4 font-bold text-gray-600">Dueño</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in pacientes %}
+                <tr class="border-b border-gray-50 hover:bg-blue-50 transition-colors">
+                    <td class="p-4 text-gray-500 font-mono text-sm">#{{ p.id }}</td>
+                    <td class="p-4 font-semibold text-gray-800">{{ p.nombre }}</td>
+                    <td class="p-4">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold 
+                            {% if p.especie.lower() == 'canino' %} bg-yellow-100 text-yellow-800 
+                            {% elif p.especie.lower() == 'felino' %} bg-purple-100 text-purple-800 
+                            {% else %} bg-blue-100 text-blue-800 {% endif %}">
+                            {{ p.especie }}
+                        </span>
+                    </td>
+                    <td class="p-4 text-gray-700">{{ p.dueño }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="4" class="p-8 text-center text-gray-400 italic">
+                        No hay pacientes registrados todavía.
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
